@@ -16,7 +16,7 @@ https://0a1600ed036880cd8c118c7100de00ed.web-security-academy.net/
 
 Первым делом нужно найти фильтр категорий, который описан в задании. Это сделать достаточно легко, так как он находится на главной странице и значения для фильтрации передаются через параметры `GET`-запроса.
 
-![](../images/Pasted image 20250118174935.png)
+![](../images/Pasted%20image%2020250118174935.png)
 
 ```
 https://0a1600ed036880cd8c118c7100de00ed.web-security-academy.net/filter?category=Accessories
@@ -36,7 +36,7 @@ https://0a1600ed036880cd8c118c7100de00ed.web-security-academy.net/filter?categor
 
 Собственно это и произошло:
 
-![](../images/Pasted image 20250118175407.png)
+![](../images/Pasted%20image%2020250118175407.png)
 
 Запрос к БД выглядел следующим образом:
 
@@ -54,7 +54,7 @@ https://0a1600ed036880cd8c118c7100de00ed.web-security-academy.net/filter?categor
 
 Ошибка)
 
-![](../images/Pasted image 20250118180147.png)
+![](../images/Pasted%20image%2020250118180147.png)
 
 Далее можно использовать бинарный поиск, для нахождения нужного значения. Т.е. передать 50. В случае ошибки взять 25, если же успех, то 75. И так далее. Можно так же ткнуть на обум. На сайте мы видим 3 колонки. Звучит логично, что они все заполняются из БД. Подставлю значение 4. Для сокращения буду писать только часть пейлоада.
 
@@ -62,7 +62,7 @@ https://0a1600ed036880cd8c118c7100de00ed.web-security-academy.net/filter?categor
 Accessories' ORDER BY 4-- -
 ```
 
-![](../images/Pasted image 20250118180405.png)
+![](../images/Pasted%20image%2020250118180405.png)
 
 Подставлю 3:
 
@@ -72,7 +72,7 @@ Accessories' ORDER BY 4-- -
 
 Супер. ~~Сбер теперь купер~~.
 
-![](../images/Pasted image 20250118180513.png)
+![](../images/Pasted%20image%2020250118180513.png)
  
  Я нашел количество столбцов. Попробую добавить `UNION` к своему пейлоаду, чтобы получить данные из БД:
   
@@ -82,7 +82,7 @@ Accessories' UNION SELECT 1,2,3-- -
 
 Ошибка(
 
-![](../images/Pasted image 20250118180901.png)
+![](../images/Pasted%20image%2020250118180901.png)
 
 Оберну значения в кавычки:
 
@@ -90,6 +90,6 @@ Accessories' UNION SELECT 1,2,3-- -
 Accessories' and false UNION SELECT 1,2,3-- -
 ```
 
-![](../images/Pasted image 20250118180835.png)
+![](../images/Pasted%20image%2020250118180835.png)
 
 Я вывел переданные значения в таблицу на сайте, что и требовалось для прохождения лабы.
